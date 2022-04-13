@@ -1,23 +1,51 @@
 ﻿#include<iostream>
 using namespace std;
 
-int x(int a, int b,int nwww)
+
+
+int nwd(int a, int b)
 {
-    while (a != b){
-        if (b > a)
-            b = b - a;
-        else
-            a = a - b;
+	while (a != b) {
+		if(b > a) {
+			b = b - a;
+		}
+		else {
+			a = a - b;
+		}
+	}
+	return a;
 }
-    return a;
+
+int nww(int a, int b) {
+	int iloczyn;
+
+	iloczyn = a * b;
+	while (a != b) {
+		if(a < b) {
+			b = b - a;
+		}
+		else {
+			a = a - b;
+		}
+	}
+	int nww = iloczyn / a;
+	
+	return nww;
 }
+
+
 
 int main()
 {
-    int a, b;
-    cout << "Podaj liczy";
-    cin >> a >> b;
-    cout << "NWD z " << a << "," << b << " = " << x(a, b) << endl;
+	int a, b,iloczyn;
+	cout << "Podaj liczbe a: ";
+	cin >> a;
 
-    return 0;
+	cout << "Podaj liczbe b: ";
+	cin >> b;
+
+	cout << "NWD z " << a << "," << b << " = " << nwd(a, b) << endl;
+	cout << "NWW z " << a << ',' << b << " = " << nww(a, b) << endl;
+
+	return 0;
 }
